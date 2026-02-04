@@ -40,6 +40,10 @@ class View:
         self.txt_title = ft.Text("Gestione Artisti", size=30, weight=ft.FontWeight.BOLD)
 
         self.dd_ruolo = ft.Dropdown(label="Seleziona ruolo artista", width=250)
+        for o in DAO.get_authorship():
+            pass
+
+
 
         self.dd_iniziale = ft.Dropdown(label="Artista Iniziale", width=250, disabled=True)
 
