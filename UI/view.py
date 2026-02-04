@@ -27,6 +27,7 @@ class View:
         self._controller = controller
 
     def popola_dropdown_ruolo(self, ruoli):
+        ruoli=self._controller.ottieni_ruoli()
         self.dd_ruolo.options = [ft.dropdown.Option(text=r) for r in ruoli]
         self.dd_ruolo.update()
 
@@ -40,8 +41,8 @@ class View:
         self.txt_title = ft.Text("Gestione Artisti", size=30, weight=ft.FontWeight.BOLD)
 
         self.dd_ruolo = ft.Dropdown(label="Seleziona ruolo artista", width=250)
-        for o in DAO.get_authorship():
-            pass
+        for r in self._controller.ottieni_ruoli():
+            self.dd_ruolo.options.append(ft.dropdown.Option(text=r))
 
 
 
